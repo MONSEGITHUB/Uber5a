@@ -63,24 +63,24 @@
 
 <div class="form-container">
     <h2>Actualizar Teléfono</h2>
-    <form action="../../app/controllers/DireccionController.php?action=update" method="POST">
+    <form action="../../app/controllers/TelefonoController.php?action=update" method="POST">
 
         <!-- ID oculto del teléfono -->
-        <input type="hidden" name="iddireccion" value="<?= $direccion['iddireccion'] ?>">
+        <input type="hidden" name="idtelefono" value="<?= $telefono['idtelefono'] ?>">
 
         <label for="idpersona">Persona:</label>
         <select name="idpersona" id="idpersona" required>
             <option value="">Seleccione una persona</option>
             <?php foreach ($personas as $persona): ?>
                 <option value="<?= $persona['idpersona'] ?>" 
-                    <?= $persona['idpersona'] == $direccion['idpersona'] ? 'selected' : '' ?>>
+                    <?= $persona['idpersona'] == $telefono['idpersona'] ? 'selected' : '' ?>>
                     <?= $persona['apellidos'] . ' ' . $persona['nombres'] ?>
                 </option>
             <?php endforeach; ?>
         </select>
 
-        <label for="nombre">Número de Teléfono:</label>
-        <input type="text" name="nombre" id="nombre" value="<?= $direccion['nombre'] ?>" required>
+        <label for="numero">Número de Teléfono:</label>
+        <input type="text" name="numero" id="numero" value="<?= $telefono['numero'] ?>" required>
 
         <input type="submit" value="Actualizar Teléfono">
     </form>

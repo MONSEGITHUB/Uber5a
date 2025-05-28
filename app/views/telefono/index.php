@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar Direccions</title>
+    <title>Listar Telefonos</title>
     <link rel="stylesheet" href="/Uber5a/public/css/style.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Listar  Direccions</h1>
-    <a href="/Uber5a/public/direccion/create"><button>Agregar</button></a>
+    <h1>Listar  Telefonos</h1>
+    <a href="/Uber5a/public/telefono/create"><button>Agregar</button></a>
 
     <table>
         <thead>
@@ -22,17 +22,17 @@
             </tr>
         </thead>
         <tbody>
-            <?php if (!empty($direccions) && is_array($direccions)): ?>
-                <?php foreach ($direccions as $direccion): ?>
+            <?php if (!empty($telefonos) && is_array($telefonos)): ?>
+                <?php foreach ($telefonos as $telefono): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($direccion['iddireccion']); ?></td>
-                        <td><?php echo htmlspecialchars($direccion['lapersona']); ?></td>
-                        <td><?php echo htmlspecialchars($direccion['nombre']); ?></td>
+                        <td><?php echo htmlspecialchars($telefono['idtelefono']); ?></td>
+                        <td><?php echo htmlspecialchars($telefono['lapersona']); ?></td>
+                        <td><?php echo htmlspecialchars($telefono['numero']); ?></td>
                         <td>
-    <a href="/Uber5a/public/direccion/edit?iddireccion=<?php echo htmlspecialchars($direccion['iddireccion']); ?>">
+    <a href="/Uber5a/public/telefono/edit?idtelefono=<?php echo htmlspecialchars($telefono['idtelefono']); ?>">
         <button>Editar</button>
     </a>
-    <a href="/Uber5a/public/direccion/eliminar?iddireccion=<?php echo htmlspecialchars($direccion['iddireccion']); ?>" 
+    <a href="/Uber5a/public/telefono/eliminar?idtelefono=<?php echo htmlspecialchars($telefono['idtelefono']); ?>" 
        onclick="return confirm('¿Estás seguro de eliminar este registro?');">
         <button>Eliminar</button>
     </a>
