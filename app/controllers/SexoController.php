@@ -104,12 +104,6 @@ public function update() {
 }
 
 
-
-
-
-
-
-
     // Eliminar un sexo
     public function delete() {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -135,6 +129,22 @@ public function update() {
 }
 }
 
+public function api() {
+
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+
+        $sexos = $this->sexo->getAll();
+        header('Content-Type: application/json');
+        echo json_encode($sexos);
+        exit;
+
+
+
+    }
+
+
 /// Manejo de la acción en la URL
 if (isset($_GET['action'])) {
     $controller = new SexoController();
@@ -150,6 +160,10 @@ if (isset($_GET['action'])) {
          case 'delete':
 
             $controller->delete();
+            break;
+         case 'api':
+
+            $controller->api();
             break;
 
 
